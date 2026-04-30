@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sangam Sir — Professional Web Designer | Starting ₹500</title>
+<meta name="description" content="Professional website design starting ₹500. School, Business, Portfolio websites. 24-48 hour delivery. WhatsApp: 9335952611">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:      #0b1828;
+  --navy-mid:  #162844;
+  --navy-soft: #1e3a5f;
+  --gold:      #e8a020;
+  --gold-lt:   #f5c55a;
+  --cream:     #f8f5ef;
+  --white:     #ffffff;
+  --gray:      #64748b;
+  --gray-lt:   #94a3b8;
+  --light:     #eef2f9;
+  --green:     #1db954;
+  --green-dk:  #159840;
+  --red:       #e53935;
+  --shadow-sm: 0 2px 12px rgba(11,24,40,0.08);
+  --shadow:    0 6px 28px rgba(11,24,40,0.12);
+  --shadow-lg: 0 16px 56px rgba(11,24,40,0.18);
+  --r:  18px;
+  --r-sm: 10px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--cream);color:var(--navy);overflow-x:hidden;line-height:1.65;-webkit-font-smoothing:antialiased}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:4px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(248,245,239,0.94);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(11,24,40,0.07);
+  transition:box-shadow .3s;
+}
+nav.scrolled{box-shadow:var(--shadow-sm)}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--navy);text-decoration:none;letter-spacing:-.3px}
+.nav-logo em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--navy);font-weight:500;font-size:.875rem;letter-spacing:.2px;position:relative;transition:color .2s}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;background:var(--gold);transform:scaleX(0);transition:transform .25s;border-radius:2px}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:9px 22px;border-radius:50px;font-weight:600!important;transition:all .2s!important}
+.nav-cta::after{display:none!important}
+.nav-cta:hover{background:var(--green-dk)!important;transform:translateY(-1px);box-shadow:0 8px 22px rgba(29,185,84,.35)!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.hamburger span{display:block;width:26px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--cream);padding:28px 24px 36px;border-bottom:1px solid rgba(11,24,40,.07);z-index:999;transform:translateY(-12px);opacity:0;transition:all .3s}
+.mobile-menu.open{display:block;transform:translateY(0);opacity:1}
+.mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:22px}
+.mobile-menu a{text-decoration:none;color:var(--navy);font-size:1.05rem;font-weight:500;display:block}
+.m-cta{display:inline-flex!important;align-items:center;gap:8px;margin-top:8px!important;background:var(--green)!important;color:#fff!important;padding:13px 28px;border-radius:50px;font-weight:700!important}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:104px 24px 72px;position:relative;overflow:hidden}
+.hero-mesh{
+  position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 55% at 75% 38%, rgba(232,160,32,.13) 0%, transparent 70%),
+    radial-gradient(ellipse 55% 70% at 15% 85%, rgba(11,24,40,.05) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 40% at 90% 90%, rgba(29,185,84,.06) 0%, transparent 60%);
+}
+/* subtle grid */
+.hero-mesh::after{
+  content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(11,24,40,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(11,24,40,.04) 1px,transparent 1px);
+  background-size:48px 48px;
+}
+.hero-inner{max-width:1120px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center;position:relative;z-index:1}
+
+/* left */
+.h-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.35);color:#9a6200;padding:6px 16px;border-radius:50px;font-size:.75rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase;margin-bottom:22px;animation:fadeUp .5s ease both}
+.h-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.8s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,4.8vw,4rem);font-weight:700;line-height:1.08;letter-spacing:-.5px;color:var(--navy);margin-bottom:18px;animation:fadeUp .5s .1s ease both}
+.hero-title .hl{color:var(--gold);position:relative;display:inline-block}
+.hero-title .hl::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-lt));border-radius:2px;opacity:.6}
+
+.hero-sub{font-size:1rem;color:var(--gray);margin-bottom:32px;max-width:440px;line-height:1.75;animation:fadeUp .5s .2s ease both}
+.hero-sub strong{color:var(--navy);font-weight:600}
+
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .5s .3s ease both;margin-bottom:44px}
+
+.btn-primary{display:inline-flex;align-items:center;gap:9px;background:var(--green);color:#fff;padding:15px 30px;border-radius:50px;font-weight:700;font-size:.9rem;text-decoration:none;box-shadow:0 8px 28px rgba(29,185,84,.32);transition:all .25s;letter-spacing:.1px}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(29,185,84,.42)}
+.btn-secondary{display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--navy);padding:15px 30px;border-radius:50px;font-weight:600;font-size:.9rem;text-decoration:none;border:1.5px solid rgba(11,24,40,.12);box-shadow:var(--shadow-sm);transition:all .25s}
+.btn-secondary:hover{border-color:var(--navy);transform:translateY(-2px);box-shadow:var(--shadow)}
+
+.hero-metrics{display:flex;gap:32px;animation:fadeUp .5s .4s ease both}
+.metric{position:relative;padding-left:16px}
+.metric::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:3px;background:var(--gold);border-radius:2px}
+.metric-val{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;color:var(--navy);line-height:1}
+.metric-lbl{font-size:.72rem;color:var(--gray);margin-top:3px;font-weight:500;letter-spacing:.2px}
+
+/* right — card */
+.hero-visual{display:flex;justify-content:center;animation:fadeUp .7s .15s ease both}
+.h-card{
+  background:#fff;border-radius:24px;
+  box-shadow:0 24px 64px rgba(11,24,40,.16);
+  padding:36px 30px;width:100%;max-width:350px;
+  position:relative;overflow:hidden;
+}
+.h-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--gold),var(--green));
+}
+.h-card-shine{
+  position:absolute;top:-60px;right:-60px;width:180px;height:180px;
+  background:radial-gradient(circle,rgba(232,160,32,.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+
+.avatar-ring{
+  width:96px;height:96px;border-radius:50%;margin:0 auto 18px;
+  background:linear-gradient(145deg,var(--navy) 0%,var(--navy-soft) 60%,var(--gold) 100%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;
+  letter-spacing:-2px;box-shadow:0 8px 28px rgba(11,24,40,.25);
+  position:relative;
+}
+.avatar-ring::after{
+  content:'';position:absolute;bottom:2px;right:2px;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--green);border:2.5px solid #fff;
+}
+
+.h-card-name{text-align:center;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.h-card-role{text-align:center;color:var(--gray);font-size:.8rem;font-weight:500;letter-spacing:.3px;text-transform:uppercase;margin-bottom:20px}
+
+.h-card-pills{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-bottom:22px}
+.pill{background:var(--light);color:var(--navy-soft);padding:5px 13px;border-radius:50px;font-size:.72rem;font-weight:600;letter-spacing:.2px}
+
+.h-price-bar{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:var(--r-sm);padding:16px 18px;text-align:center;color:#fff}
+.h-price-bar .from{font-size:.7rem;opacity:.6;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.h-price-bar .amt{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;line-height:1}
+.h-price-bar .loc{font-size:.7rem;opacity:.5;margin-top:4px}
+
+/* badge floating */
+.h-badge{
+  position:absolute;bottom:-14px;right:-10px;
+  background:#fff;border-radius:12px;padding:10px 14px;
+  box-shadow:var(--shadow);display:flex;align-items:center;gap:8px;
+  font-size:.75rem;font-weight:600;color:var(--navy);white-space:nowrap;
+}
+.h-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(29,185,84,.25);animation:blink 2s infinite}
+
+/* ── SECTION BASE ── */
+section{padding:88px 24px;position:relative;z-index:1}
+.si{max-width:1120px;margin:0 auto;width:100%}
+.s-tag{display:inline-flex;align-items:center;gap:7px;background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.3);color:#9a6200;padding:5px 15px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:14px}
+.s-tag svg{width:12px;height:12px;flex-shrink:0}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,2.9rem);font-weight:700;color:var(--navy);line-height:1.12;letter-spacing:-.3px;margin-bottom:14px}
+.s-sub{color:var(--gray);font-size:.95rem;max-width:500px;margin-bottom:52px;line-height:1.75}
+.divider{width:48px;height:3px;background:linear-gradient(90deg,var(--gold),var(--navy-soft));border-radius:2px;margin-bottom:44px}
+
+/* ── PROBLEM / SOLUTION ── */
+.ps-bg{background:var(--navy)}
+.ps-bg .s-tag{background:rgba(232,160,32,.15);border-color:rgba(232,160,32,.3);color:var(--gold-lt)}
+.ps-bg .s-title{color:#fff}
+.ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.ps-bg .s-sub{color:rgba(255,255,255,.55);margin-bottom:32px}
+
+.ps-cards{display:flex;flex-direction:column;gap:14px}
+.ps-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--r);padding:20px 22px;display:flex;align-items:flex-start;gap:16px;
+  transition:transform .25s,background .25s;
+}
+.ps-card:hover{transform:translateX(6px);background:rgba(255,255,255,.08)}
+.ps-icon-wrap{
+  width:46px;height:46px;border-radius:14px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.ps-icon-wrap.bad{background:rgba(229,57,53,.18)}
+.ps-icon-wrap.good{background:rgba(29,185,84,.18)}
+.ps-icon-wrap svg{width:22px;height:22px}
+.ps-card h4{font-size:.92rem;font-weight:600;color:#fff;margin-bottom:4px}
+.ps-card p{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:24px}
+.svc-card{
+  background:#fff;border-radius:var(--r);padding:34px 28px;
+  box-shadow:var(--shadow-sm);border:1px solid rgba(11,24,40,.06);
+  transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;
+}
+.svc-card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--green));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.svc-card:hover::after{transform:scaleX(1)}
+
+.svc-icon-box{
+  width:60px;height:60px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  position:relative;overflow:hidden;
+}
+.svc-icon-box svg{width:30px;height:30px;position:relative;z-index:1}
+.ib-blue{background:linear-gradient(145deg,#dbeafe,#bfdbfe)}
+.ib-green{background:linear-gradient(145deg,#d1fae5,#a7f3d0)}
+.ib-purple{background:linear-gradient(145deg,#ede9fe,#ddd6fe)}
+.ib-orange{background:linear-gradient(145deg,#fef3c7,#fde68a)}
+
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.svc-desc{font-size:.82rem;color:var(--gray);margin-bottom:20px;line-height:1.7}
+.svc-price{display:flex;align-items:baseline;gap:4px;margin-bottom:18px}
+.p-from{font-size:.72rem;color:var(--gray-lt)}
+.p-amt{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--navy)}
+.p-unit{font-size:.72rem;color:var(--gray-lt)}
+.svc-feats{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:26px}
+.svc-feats li{display:flex;align-items:center;gap:9px;font-size:.8rem;color:var(--gray)}
+.svc-feats li svg{width:14px;height:14px;flex-shrink:0;color:var(--green)}
+.btn-svc{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--navy);color:#fff;padding:12px 20px;
+  border-radius:50px;font-weight:600;font-size:.82rem;text-decoration:none;
+  transition:background .25s,transform .2s;
+}
+.btn-svc:hover{background:var(--gold);transform:scale(1.02)}
+.btn-svc svg{width:15px;height:15px}
+
+/* CTA strip */
+.cta-strip{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+  border-radius:var(--r);padding:40px 40px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;margin-top:40px;flex-wrap:wrap;
+}
+.cta-strip-text h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:#fff;margin-bottom:6px}
+.cta-strip-text p{color:rgba(255,255,255,.5);font-size:.85rem}
+
+/* ── WHY ME ── */
+.why-bg{background:var(--light)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.why-card{
+  background:#fff;border-radius:var(--r);padding:30px 24px;text-align:center;
+  box-shadow:var(--shadow-sm);transition:transform .25s,box-shadow .25s;
+}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.why-icon{
+  width:56px;height:56px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+}
+.why-icon svg{width:28px;height:28px}
+.wi-1{background:linear-gradient(145deg,#fef3c7,#fde68a)}
+.wi-2{background:linear-gradient(145deg,#d1fae5,#a7f3d0)}
+.wi-3{background:linear-gradient(145deg,#dbeafe,#bfdbfe)}
+.wi-4{background:linear-gradient(145deg,#fce7f3,#fbcfe8)}
+.wi-5{background:linear-gradient(145deg,#ede9fe,#ddd6fe)}
+.wi-6{background:linear-gradient(145deg,#ffedd5,#fed7aa)}
+.why-title{font-weight:700;font-size:.92rem;color:var(--navy);margin-bottom:8px}
+.why-desc{font-size:.78rem;color:var(--gray);line-height:1.6}
+
+/* ── PORTFOLIO ── */
+.port-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:26px}
+.port-card{
+  border-radius:var(--r);overflow:hidden;background:#fff;
+  box-shadow:var(--shadow-sm);transition:transform .3s,box-shadow .3s;
+}
+.port-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.port-thumb{
+  height:186px;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+}
+.pt-1{background:linear-gradient(145deg,#1e3a5f 0%,#1d4ed8 100%)}
+.pt-2{background:linear-gradient(145deg,#065f46 0%,#059669 100%)}
+.pt-3{background:linear-gradient(145deg,#4c1d95 0%,#7c3aed 100%)}
+.port-thumb svg{width:64px;height:64px;opacity:.9}
+.port-badge{position:absolute;top:14px;right:14px;background:rgba(255,255,255,.18);backdrop-filter:blur(8px);color:#fff;padding:4px 11px;border-radius:50px;font-size:.68rem;font-weight:700;letter-spacing:.4px;border:1px solid rgba(255,255,255,.25)}
+.port-info{padding:22px 24px}
+.port-type{font-size:.68rem;font-weight:700;letter-spacing:.8px;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.port-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.port-desc{font-size:.79rem;color:var(--gray);line-height:1.6}
+
+/* ── PROCESS ── */
+.process-bg{background:var(--light)}
+.process-row{display:grid;grid-template-columns:repeat(4,1fr);position:relative;gap:8px}
+.process-row::before{
+  content:'';position:absolute;
+  top:34px;left:calc(12.5% + 4px);right:calc(12.5% + 4px);
+  height:2px;background:linear-gradient(90deg,var(--gold),var(--navy-soft));
+  z-index:0;
+}
+.p-step{text-align:center;padding:0 10px;position:relative;z-index:1}
+.p-num{
+  width:68px;height:68px;border-radius:50%;background:#fff;
+  border:2.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 18px;
+  font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--navy);
+  box-shadow:var(--shadow-sm);
+}
+.p-step-icon{width:28px;height:28px}
+.p-step-icon svg{width:28px;height:28px}
+.p-title{font-weight:700;font-size:.88rem;color:var(--navy);margin-bottom:8px}
+.p-desc{font-size:.76rem;color:var(--gray);line-height:1.6}
+
+/* ── TESTIMONIALS ── */
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(288px,1fr));gap:24px}
+.testi-card{
+  background:#fff;border-radius:var(--r);padding:30px;
+  box-shadow:var(--shadow-sm);
+  border-top:3px solid var(--gold);
+  transition:transform .25s,box-shadow .25s;
+}
+.testi-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.stars{display:flex;gap:3px;margin-bottom:14px}
+.stars svg{width:16px;height:16px;fill:var(--gold)}
+.testi-q{width:28px;height:28px;margin-bottom:12px;opacity:.12}
+.testi-text{font-size:.855rem;color:var(--gray);line-height:1.75;margin-bottom:22px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.t-av{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:#fff;flex-shrink:0}
+.ta-1{background:linear-gradient(135deg,#e8a020,#f5c55a)}
+.ta-2{background:linear-gradient(135deg,#059669,#065f46)}
+.ta-3{background:linear-gradient(135deg,#7c3aed,#4c1d95)}
+.t-name{font-weight:700;font-size:.88rem;color:var(--navy)}
+.t-biz{font-size:.73rem;color:var(--gray)}
+
+/* ── CONTACT ── */
+.contact-bg{background:var(--navy)}
+.contact-bg .s-tag{background:rgba(232,160,32,.15);border-color:rgba(232,160,32,.3);color:var(--gold-lt)}
+.contact-bg .s-title{color:#fff}
+.contact-bg .s-sub{color:rgba(255,255,255,.5)}
+.c-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.c-items{display:flex;flex-direction:column;gap:16px}
+.c-item{
+  display:flex;align-items:flex-start;gap:16px;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--r);padding:20px 22px;transition:background .25s;
+}
+.c-item:hover{background:rgba(255,255,255,.08)}
+.c-icon{
+  width:44px;height:44px;border-radius:13px;
+  background:rgba(232,160,32,.18);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.c-icon svg{width:20px;height:20px}
+.c-lbl{font-size:.68rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.5px;text-transform:uppercase;margin-bottom:3px}
+.c-val{color:#fff;font-size:.88rem;font-weight:500}
+.c-val a{color:var(--gold-lt);text-decoration:none}
+.c-val a:hover{text-decoration:underline}
+
+/* Form */
+.c-form{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:var(--r);padding:34px 30px;
+}
+.c-form-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:#fff;margin-bottom:26px}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:.76rem;font-weight:600;color:rgba(255,255,255,.65);margin-bottom:8px;letter-spacing:.2px}
+.fg input,.fg select,.fg textarea{
+  width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r-sm);padding:12px 16px;color:#fff;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.87rem;outline:none;
+  transition:border-color .25s,background .25s;
+}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.3)}
+.fg select option{background:var(--navy)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.1)}
+.fg textarea{resize:vertical;min-height:80px}
+.btn-submit{
+  width:100%;background:var(--green);color:#fff;border:none;
+  padding:15px;border-radius:50px;
+  font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;
+  transition:all .25s;
+}
+.btn-submit:hover{background:var(--green-dk);transform:translateY(-2px);box-shadow:0 12px 32px rgba(29,185,84,.4)}
+.btn-submit svg{width:18px;height:18px}
+
+/* ── FOOTER ── */
+footer{
+  background:#060e1a;color:rgba(255,255,255,.4);
+  text-align:center;padding:32px 24px;font-size:.8rem;position:relative;z-index:1;
+}
+footer strong{color:rgba(255,255,255,.75)}
+footer a{color:var(--gold-lt);text-decoration:none}
+.footer-hr{width:60px;height:1px;background:rgba(255,255,255,.1);margin:16px auto}
+.heart{color:#e53935}
+
+/* ── FLOAT WA ── */
+.float-wa{
+  position:fixed;bottom:28px;right:28px;
+  width:58px;height:58px;border-radius:50%;
+  background:var(--green);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px rgba(29,185,84,.45);text-decoration:none;z-index:9999;
+  animation:waPulse 2.5s infinite;transition:transform .3s,box-shadow .3s;
+}
+.float-wa:hover{transform:scale(1.1);box-shadow:0 16px 48px rgba(29,185,84,.6);animation:none}
+.float-wa svg{width:28px;height:28px;fill:#fff}
+.wa-tip{
+  position:absolute;right:68px;
+  background:#fff;color:var(--navy);
+  padding:8px 14px;border-radius:9px;
+  font-size:.76rem;font-weight:600;white-space:nowrap;
+  box-shadow:var(--shadow);
+  opacity:0;pointer-events:none;transition:opacity .25s;
+}
+.wa-tip::after{
+  content:'';position:absolute;right:-5px;top:50%;transform:translateY(-50%);
+  border:5px solid transparent;border-right:none;border-left-color:#fff;
+}
+.float-wa:hover .wa-tip{opacity:1}
+@keyframes waPulse{0%,100%{box-shadow:0 8px 32px rgba(29,185,84,.45)}50%{box-shadow:0 8px 48px rgba(29,185,84,.75)}}
+
+/* ── SCROLL TOP ── */
+.scroll-top{
+  position:fixed;bottom:28px;left:28px;width:42px;height:42px;
+  border-radius:50%;background:var(--navy);border:none;color:#fff;
+  font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .3s;z-index:999;
+}
+.scroll-top.visible{opacity:1;pointer-events:all}
+.scroll-top:hover{transform:translateY(-3px)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── NOTIF ── */
+.notif{
+  position:fixed;top:82px;right:20px;
+  background:#fff;border-radius:var(--r-sm);padding:14px 20px;
+  box-shadow:var(--shadow-lg);border-left:3px solid var(--green);
+  font-size:.82rem;font-weight:500;color:var(--navy);z-index:9998;
+  transform:translateX(120%);transition:transform .4s cubic-bezier(.175,.885,.32,1.275);
+  max-width:286px;
+}
+.notif.show{transform:translateX(0)}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:92px 20px 64px}
+  .hero-inner{grid-template-columns:1fr;gap:44px;text-align:center}
+  .h-eyebrow,.hero-btns,.hero-metrics{justify-content:center}
+  .hero-sub,.s-sub{margin-left:auto;margin-right:auto}
+  .hero-visual{order:-1}
+  .ps-grid,.c-grid{grid-template-columns:1fr;gap:36px}
+  .process-row{grid-template-columns:1fr 1fr;gap:24px}
+  .process-row::before{display:none}
+  .cta-strip{flex-direction:column;text-align:center}
+  section{padding:64px 20px}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column;align-items:stretch}
+  .btn-primary,.btn-secondary{justify-content:center}
+  .process-row{grid-template-columns:1fr}
+  .hero-metrics{gap:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Sangam<em>Sir</em></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="https://wa.me/919335952611" target="_blank" class="nav-cta">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" style="display:inline;vertical-align:middle;margin-right:5px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#services" class="mob-link">Services</a></li>
+    <li><a href="#portfolio" class="mob-link">Portfolio</a></li>
+    <li><a href="#process" class="mob-link">Process</a></li>
+    <li><a href="#contact" class="mob-link">Contact</a></li>
+    <li>
+      <a href="https://wa.me/919335952611" target="_blank" class="m-cta">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp Order
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-mesh"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="h-eyebrow">
+        <span class="h-eyebrow-dot"></span>
+        Jaunpur, U.P. &nbsp;·&nbsp; India's Local Web Designer
+      </div>
+      <h1 class="hero-title">
+        Simple Websites.<br><span class="hl">Powerful</span> Impact.
+      </h1>
+      <p class="hero-sub">
+        Professional websites for local businesses, schools &amp; individuals — <strong>starting ₹500 only.</strong> Delivery in 24–48 hours. Hindi &amp; English support.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/919335952611?text=Namaste%20Sangam%20Sir%2C%20website%20chahiye!" target="_blank" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
+        <a href="#portfolio" class="btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="17" height="17"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          View My Work
+        </a>
+      </div>
+      <div class="hero-metrics">
+        <div class="metric">
+          <div class="metric-val">₹500</div>
+          <div class="metric-lbl">Starting Price</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">24 hrs</div>
+          <div class="metric-lbl">Fast Delivery</div>
+        </div>
+        <div class="metric">
+          <div class="metric-val">100%</div>
+          <div class="metric-lbl">Satisfaction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="h-card" style="position:relative">
+        <div class="h-card-shine"></div>
+        <div class="avatar-ring">SS</div>
+        <div class="h-card-name">Sangam Sir</div>
+        <div class="h-card-role">Web Designer &amp; Developer</div>
+        <div class="h-card-pills">
+          <span class="pill">School Sites</span>
+          <span class="pill">Business</span>
+          <span class="pill">Portfolio</span>
+          <span class="pill">24hr Delivery</span>
+        </div>
+        <div class="h-price-bar">
+          <div class="from">Websites Starting From</div>
+          <div class="amt">₹500 Only</div>
+          <div class="loc">Jaunpur, Uttar Pradesh</div>
+        </div>
+        <div class="h-badge">
+          <span class="h-badge-dot"></span>
+          Available for Projects
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM / SOLUTION -->
+<section class="ps-bg" id="problem">
+  <div class="si">
+    <div class="ps-grid">
+      <div>
+        <div class="s-tag reveal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Problem → Solution
+        </div>
+        <h2 class="s-title reveal">Aapka Business Online Kyun Nahi Hai?</h2>
+        <p class="s-sub reveal">Aaj ke digital zamane mein website nahi hai toh customers nahi milte. Main aapki problem solve karta hoon — seedha, fast, aur affordable.</p>
+        <a href="https://wa.me/919335952611?text=Namaste%20Sangam%20Sir%2C%20business%20online%20karna%20hai!" target="_blank" class="btn-primary reveal" style="display:inline-flex;margin-top:4px">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Abhi Baat Karo
+        </a>
+      </div>
+      <div class="ps-cards">
+        <div class="ps-card reveal">
+          <div class="ps-icon-wrap bad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+          </div>
+          <div>
+            <h4>Business Google pe nahi dikh raha</h4>
+            <p>Log search karte hain lekin aapko nahi dhund paate — customers kho rahe hain competitors ke paas</p>
+          </div>
+        </div>
+        <div class="ps-card reveal d1">
+          <div class="ps-icon-wrap bad">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><line x1="2" y1="7" x2="22" y2="7"/><line x1="6" y1="3" x2="6" y2="7"/></svg>
+          </div>
+          <div>
+            <h4>Online presence zero hai</h4>
+            <p>Competitors ke paas professional website hai — aapke paas nahi, iska seedha asar income pe padta hai</p>
+          </div>
+        </div>
+        <div class="ps-card reveal d2">
+          <div class="ps-icon-wrap good">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1db954" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h4>Professional website sirf ₹500 mein</h4>
+            <p>Mobile-friendly, fast aur Google-ready website jo aapka business seriously online le jaaye</p>
+          </div>
+        </div>
+        <div class="ps-card reveal d3">
+          <div class="ps-icon-wrap good">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1db954" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>24–48 ghante mein website live</h4>
+            <p>WhatsApp pe details bhejo, 24 ghante mein aapka business online. Hindi &amp; English dono support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="si">
+    <div class="s-tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Services
+    </div>
+    <h2 class="s-title reveal">Kya Banata Hoon Main?</h2>
+    <p class="s-sub reveal">Har type ka website — affordable price mein, fast delivery ke saath. Sirf WhatsApp karo.</p>
+    <div class="divider reveal"></div>
+    <div class="services-grid">
+
+      <div class="svc-card reveal">
+        <div class="svc-icon-box ib-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="svc-name">School Website</div>
+        <p class="svc-desc">School ka professional website — parents aur students ke liye admission, fees, events, gallery sab ek jagah</p>
+        <div class="svc-price">
+          <span class="p-from">Starting</span>
+          <span class="p-amt">₹999</span>
+          <span class="p-unit">onwards</span>
+        </div>
+        <ul class="svc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Admission Form</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Photo Gallery</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Mobile Friendly</li>
+        </ul>
+        <a href="https://wa.me/919335952611?text=Namaste%20Sir%2C%20School%20Website%20chahiye!" target="_blank" class="btn-svc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <div class="svc-card reveal d1">
+        <div class="svc-icon-box ib-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="svc-name">Business Website</div>
+        <p class="svc-desc">Dukan ya company ka website jo customers ko attract kare aur aapka business professionally present kare</p>
+        <div class="svc-price">
+          <span class="p-from">Starting</span>
+          <span class="p-amt">₹500</span>
+          <span class="p-unit">onwards</span>
+        </div>
+        <ul class="svc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Services Page</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Contact Form</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>WhatsApp Button</li>
+        </ul>
+        <a href="https://wa.me/919335952611?text=Namaste%20Sir%2C%20Business%20Website%20chahiye!" target="_blank" class="btn-svc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <div class="svc-card reveal d2">
+        <div class="svc-icon-box ib-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="svc-name">Portfolio Website</div>
+        <p class="svc-desc">Apna kaam online dikhaao — teachers, artists, freelancers, job seekers sabke liye perfect personal site</p>
+        <div class="svc-price">
+          <span class="p-from">Starting</span>
+          <span class="p-amt">₹799</span>
+          <span class="p-unit">onwards</span>
+        </div>
+        <ul class="svc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Work Showcase</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Skills Display</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Contact Info</li>
+        </ul>
+        <a href="https://wa.me/919335952611?text=Namaste%20Sir%2C%20Portfolio%20Website%20chahiye!" target="_blank" class="btn-svc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
+      </div>
+
+      <div class="svc-card reveal d3">
+        <div class="svc-icon-box ib-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="svc-name">Custom Website</div>
+        <p class="svc-desc">Coaching center, NGO, event page, landing page — jo bolo woh banata hoon, fully customized</p>
+        <div class="svc-price">
+          <span class="p-from">Starting</span>
+          <span class="p-amt">₹500</span>
+          <span class="p-unit">onwards</span>
+        </div>
+        <ul class="svc-feats">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Any Type</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Custom Design</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Extra Features</li>
+        </ul>
+        <a href="https://wa.me/919335952611?text=Namaste%20Sir%2C%20Custom%20Website%20banwani%20hai!" target="_blank" class="btn-svc">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Order on WhatsApp
+        </a>
+      </div>
+
+    </div>
+
+    <div class="cta-strip reveal">
+      <div class="cta-strip-text">
+        <h3>Full Details ke liye WhatsApp Karein</h3>
+        <p>Price, features, timeline — sab WhatsApp pe baat hogi. Turant reply milega.</p>
+      </div>
+      <a href="https://wa.me/919335952611?text=Namaste%20Sangam%20Sir%2C%20pricing%20details%20chahiye!" target="_blank" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        WhatsApp: 9335952611
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="why-bg">
+  <div class="si">
+    <div class="s-tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Why Choose Me
+    </div>
+    <h2 class="s-title reveal">Mujhe Kyun Choose Karein?</h2>
+    <div class="divider reveal"></div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon wi-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="why-title">Sabse Affordable</div>
+        <p class="why-desc">₹500 se shuru — India mein itna affordable aur quality website design koi nahi deta</p>
+      </div>
+      <div class="why-card reveal d1">
+        <div class="why-icon wi-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="1.8"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="why-title">Super Fast Delivery</div>
+        <p class="why-desc">24 se 48 ghante mein website ready. Aaj order karo, kal se aapka business online</p>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-icon wi-3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#1d4ed8" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="why-title">Hindi + English</div>
+        <p class="why-desc">Hindi mein baat karo, Hindi content dalwao — local businesses ke liye bilkul perfect</p>
+      </div>
+      <div class="why-card reveal d3">
+        <div class="why-icon wi-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#db2777" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <div class="why-title">Mobile-First Design</div>
+        <p class="why-desc">Har website mobile pe perfect dikhti hai — kyunki India mein sab mobile se dekhte hain</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="why-icon wi-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+        </div>
+        <div class="why-title">Clean &amp; Professional</div>
+        <p class="why-desc">Attractive, fast, aur modern design — aapka business premium aur credible lagega</p>
+      </div>
+      <div class="why-card reveal d1">
+        <div class="why-icon wi-6">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <div class="why-title">Extra Features On Demand</div>
+        <p class="why-desc">Gallery, forms, payment links, WhatsApp button — jo chahiye add karta hoon</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="si">
+    <div class="s-tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+      Portfolio
+    </div>
+    <h2 class="s-title reveal">Mera Kaam Dekho</h2>
+    <p class="s-sub reveal">Demo websites — aapka bhi aisa hi banaunga, aur bhi behtar</p>
+    <div class="divider reveal"></div>
+    <div class="port-grid">
+      <div class="port-card reveal">
+        <div class="port-thumb pt-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <div class="port-badge">Demo</div>
+        </div>
+        <div class="port-info">
+          <div class="port-type">School Website</div>
+          <div class="port-name">Bright Future Academy</div>
+          <p class="port-desc">Full school website with admission form, gallery, principal message &amp; mobile-friendly design</p>
+        </div>
+      </div>
+      <div class="port-card reveal d1">
+        <div class="port-thumb pt-2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.4"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+          <div class="port-badge">Demo</div>
+        </div>
+        <div class="port-info">
+          <div class="port-type">Business Website</div>
+          <div class="port-name">Sharma Ji Ka Dhaba</div>
+          <p class="port-desc">Restaurant website with menu, WhatsApp order button, location &amp; contact section</p>
+        </div>
+      </div>
+      <div class="port-card reveal d2">
+        <div class="port-thumb pt-3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="1.4"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <div class="port-badge">Demo</div>
+        </div>
+        <div class="port-info">
+          <div class="port-type">Portfolio Website</div>
+          <div class="port-name">Rahul Photography</div>
+          <p class="port-desc">Clean portfolio showcasing photography work with contact &amp; booking section</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px" class="reveal">
+      <p style="color:var(--gray);margin-bottom:18px;font-size:.9rem">Aapka bhi aisa website chahiye? Abhi order karein.</p>
+      <a href="https://wa.me/919335952611?text=Namaste%20Sir%2C%20demo%20dekha%2C%20mujhe%20bhi%20aisa%20chahiye!" target="_blank" class="btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Mujhe Bhi Aisa Chahiye
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-bg" id="process">
+  <div class="si">
+    <div class="s-tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+      How It Works
+    </div>
+    <h2 class="s-title reveal">Kaise Hoga Kaam?</h2>
+    <p class="s-sub reveal">Sirf 4 simple steps — utna hi aasaan hai</p>
+    <div class="divider reveal"></div>
+    <div class="process-row">
+      <div class="p-step reveal">
+        <div class="p-num">
+          <svg class="p-step-icon" viewBox="0 0 24 24" fill="none" stroke="#0b1828" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="p-title">WhatsApp Karo</div>
+        <p class="p-desc">9335952611 pe message karo, apni requirements batao</p>
+      </div>
+      <div class="p-step reveal d1">
+        <div class="p-num">
+          <svg class="p-step-icon" viewBox="0 0 24 24" fill="none" stroke="#0b1828" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <div class="p-title">Details Bhejo</div>
+        <p class="p-desc">Logo, photos, content, color — jo ho woh share karo</p>
+      </div>
+      <div class="p-step reveal d2">
+        <div class="p-num">
+          <svg class="p-step-icon" viewBox="0 0 24 24" fill="none" stroke="#0b1828" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="p-title">Website Ready</div>
+        <p class="p-desc">24–48 ghante mein website taiyar, preview dikhaunga</p>
+      </div>
+      <div class="p-step reveal d3">
+        <div class="p-num">
+          <svg class="p-step-icon" viewBox="0 0 24 24" fill="none" stroke="#0b1828" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="p-title">Payment &amp; Live</div>
+        <p class="p-desc">Pasand aaye toh payment karo, website live ho jaayegi</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section>
+  <div class="si">
+    <div class="s-tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      Reviews
+    </div>
+    <h2 class="s-title reveal">Log Kya Kehte Hain?</h2>
+    <div class="divider reveal"></div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testi-text">"Mujhe school ka website chahiye tha. Sangam sir ne 1 din mein bana diya. Bahut clean aur professional laga. Parents bhi impress hue. Bilkul sahi price mein excellent kaam kiya!"</p>
+        <div class="testi-author">
+          <div class="t-av ta-1">R</div>
+          <div>
+            <div class="t-name">Ramesh Gupta Ji</div>
+            <div class="t-biz">Principal, Bright Stars School</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d1">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testi-text">"Humari dukan ka website bahut achha bana. WhatsApp se order aana shuru ho gaye! Itne kam paise mein itna achha kaam — main toh hairan tha. Highly recommend!"</p>
+        <div class="testi-author">
+          <div class="t-av ta-2">S</div>
+          <div>
+            <div class="t-name">Sunita Devi Ji</div>
+            <div class="t-biz">Owner, Sunita Boutique</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal d2">
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testi-text">"Portfolio website bani, ab job interviews mein link share karta hoon. Logo bhi dekh ke impress ho jaate hain. Bahut fast delivery thi, sirf 24 ghante mein sab ready!"</p>
+        <div class="testi-author">
+          <div class="t-av ta-3">A</div>
+          <div>
+            <div class="t-name">Amit Kumar</div>
+            <div class="t-biz">Graphic Designer, Jaunpur</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-bg" id="contact">
+  <div class="si">
+    <div class="s-tag reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.82a16 16 0 0 0 6.27 6.27l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      Contact
+    </div>
+    <h2 class="s-title reveal">Aaj Hi Baat Karo</h2>
+    <p class="s-sub reveal">WhatsApp pe message karo — turant reply milega</p>
+    <div class="c-grid">
+      <div class="c-items">
+        <div class="c-item reveal">
+          <div class="c-icon">
+            <svg viewBox="0 0 24 24" fill="#e8a020"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          </div>
+          <div>
+            <div class="c-lbl">WhatsApp</div>
+            <div class="c-val"><a href="https://wa.me/919335952611" target="_blank">+91 93359 52611</a></div>
+          </div>
+        </div>
+        <div class="c-item reveal d1">
+          <div class="c-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="c-lbl">Email</div>
+            <div class="c-val"><a href="mailto:mindrix.support@gmail.com">mindrix.support@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="c-item reveal d2">
+          <div class="c-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="c-lbl">Address</div>
+            <div class="c-val">Menhadi, Jaunpur<br>Uttar Pradesh — 222135</div>
+          </div>
+        </div>
+        <a href="https://wa.me/919335952611?text=Namaste%20Sangam%20Sir%2C%20website%20ke%20baare%20mein%20baat%20karni%20hai!" target="_blank" class="btn-primary reveal" style="display:inline-flex;margin-top:8px">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="17" height="17"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp pe Order Karo
+        </a>
+      </div>
+
+      <div class="c-form reveal">
+        <div class="c-form-title">Quick Enquiry Bhejo</div>
+        <div class="fg">
+          <label>Aapka Naam *</label>
+          <input type="text" id="f-name" placeholder="Jaise: Ramesh Kumar">
+        </div>
+        <div class="fg">
+          <label>Kaunsa Website Chahiye? *</label>
+          <select id="f-work">
+            <option value="">— Select Karein —</option>
+            <option>School Website</option>
+            <option>Business Website</option>
+            <option>Portfolio Website</option>
+            <option>Custom Website</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Budget (approx)</label>
+          <select id="f-budget">
+            <option value="">— Budget Batayein —</option>
+            <option>₹500 – ₹999</option>
+            <option>₹1000 – ₹2000</option>
+            <option>₹2000 – ₹5000</option>
+            <option>₹5000+</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Koi Khaas Requirement?</label>
+          <textarea id="f-msg" placeholder="Jaise: Logo chahiye, Hindi content, WhatsApp button, etc."></textarea>
+        </div>
+        <button class="btn-submit" onclick="sendEnquiry()">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp pe Bhejo
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div style="font-size:.95rem;color:rgba(255,255,255,.65);margin-bottom:6px">
+    <strong>Sangam Sir</strong> — Web Designer &amp; Developer
+  </div>
+  <div class="footer-hr"></div>
+  <div>
+    <a href="https://wa.me/919335952611">+91 93359 52611</a>
+    &nbsp;&nbsp;·&nbsp;&nbsp;
+    <a href="mailto:mindrix.support@gmail.com">mindrix.support@gmail.com</a>
+  </div>
+  <div style="margin-top:14px">
+    Made with <span class="heart">♥</span> by Sangam Sir &nbsp;·&nbsp; © 2025 All Rights Reserved
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<a href="https://wa.me/919335952611?text=Namaste%20Sangam%20Sir%2C%20website%20banwani%20hai!" target="_blank" class="float-wa">
+  <div class="wa-tip">Order karein</div>
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- NOTIF -->
+<div class="notif" id="notif"></div>
+
+<script>
+const nav=document.getElementById('navbar'),hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu'),st=document.getElementById('scrollTop');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',scrollY>20);st.classList.toggle('visible',scrollY>300)});
+hb.addEventListener('click',()=>{hb.classList.toggle('open');mm.classList.toggle('open')});
+document.querySelectorAll('.mob-link').forEach(l=>l.addEventListener('click',()=>{hb.classList.remove('open');mm.classList.remove('open')}));
+
+// reveal
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}}));
+
+function sendEnquiry(){
+  const n=document.getElementById('f-name').value.trim();
+  const w=document.getElementById('f-work').value;
+  const b=document.getElementById('f-budget').value;
+  const m=document.getElementById('f-msg').value.trim();
+  if(!n||!w){showN('Please fill name and website type.',false);return}
+  const txt=`Namaste Sangam Sir!\n\n*Enquiry Details:*\nNaam: ${n}\nWebsite Type: ${w}\nBudget: ${b||'Discuss karenge'}\nRequirements: ${m||'WhatsApp pe discuss karenge'}\n\nKindly guide karein.`;
+  window.open(`https://wa.me/919335952611?text=${encodeURIComponent(txt)}`,'_blank');
+  showN('Redirecting to WhatsApp...', true);
+}
+function showN(msg,ok){
+  const n=document.getElementById('notif');
+  n.textContent=msg;n.style.borderLeftColor=ok?'var(--green)':'var(--red)';
+  n.classList.add('show');setTimeout(()=>n.classList.remove('show'),3400);
+}
+setTimeout(()=>showN('Welcome — WhatsApp pe order karein, ₹500 se shuru!',true),4000);
+</script>
+</body>
+</html>
